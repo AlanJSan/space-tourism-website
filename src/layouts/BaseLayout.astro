@@ -1,17 +1,29 @@
 ---
-import Header from '../components/Header.astro'
-const {bgUrl, title} = Astro.props;
+import Header from "../components/Header.astro";
+const { bgMobileUrl, title } = Astro.props;
+console.log(Astro.props);
 ---
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Space tourism website</title>
-	</head>
-    <body class=`bg-[url('${bgUrl}')] p-6`>
-        <Header />
-        <slot />
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Space tourism website</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="p-6 text-[#D0D6D9] bg-cover h-screen w-screen" style=`background-image: url(${bgMobileUrl})`>
+    <Header />
+    <slot />
+  </body>
+  <script>
+    import "../scripts/hamburger.js";
+  </script>
 </html>
