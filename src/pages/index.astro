@@ -1,19 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-	<BaseLayout 
-	bgMobileUrl={'../assets/home/background-home-mobile.jpg'}
-	title={'Home'}>
-		00 Home
-		01 Destination
-		02 Crew
-		03 Technology
 
-		So, you want to travel to
-		Space
-		Let's face it; if you want to go to space, you might as well genuinely go to 
-		outer space and not hover kind of on the edge of it. Well sit back, and relax 
-		because we'll give you a truly out of this world experience!
-
-		Explore
-	</BaseLayout>
+<BaseLayout
+  bgMobileUrl={"../assets/home/background-home-mobile.jpg"}
+  title={"Home"}
+>
+  <main class="pt-10 text-center">
+    <section>
+      <p>
+		<span class="block tracking-widest">SO, YOU WANT TO TRAVEL TO</span> <span class="font-bellefair text-white text-[80px] block">SPACE</span>
+		Let's face it; if you want to go to space,
+		you might as well genuinely go to outer space and not hover kind of on the
+		edge of it. Well sit back, and relax because we'll give you a truly out of
+		this world experience!
+	  </p>
+    </section>
+    <section class="mt-20">
+      <span class="bg-white rounded-full w-[150px] h-[150px] block m-auto pt-16 text-xl text-[#0B0D17] font-bellefair">EXPLORE</span>
+    </section>
+  </main>
+</BaseLayout>

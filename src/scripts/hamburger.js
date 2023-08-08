@@ -1,9 +1,11 @@
 const menu = document.querySelector('.menu');
 document.querySelector(".hamburger").addEventListener("click", () => {
     menu.classList.toggle("invisible");
-//    document.querySelector('body').classList.add("h-screen");
+    menu.classList.replace("opacity-0", "opacity-1");
 })
 
 document.querySelector(".close").addEventListener("click", () =>{
-        menu.classList.toggle("invisible");
+    menu.classList.replace("opacity-1", "opacity-0");
+    setTimeout(() => menu.classList.toggle("invisible"),150)    
+    
 })
