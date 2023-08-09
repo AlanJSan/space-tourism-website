@@ -6,7 +6,13 @@ module.exports = {
 			bellefair: ['Bellefair', 'serif'],
 			barlow: ['Barlow Condensed', 'sans-serif']
 		},
-		extend: {},
+		extend: {
+			backgroundImage: {
+				'mobile': 'url(/assets/home/background-home-mobile.jpg)',
+				'tablet': "url('/assets/home/background-home-tablet.jpg')",
+				'desktop': "url('/assets/home/background-home-desktop.jpg')"
+			  }
+		},
 	},
 	plugins: [],
 }

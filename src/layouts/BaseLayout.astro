@@ -1,7 +1,6 @@
 ---
 import Header from "../components/Header.astro";
-const { bgMobileUrl, title } = Astro.props;
-console.log(Astro.props);
+const { title } = Astro.props;
 ---
 
 <html lang="en">
@@ -19,7 +18,7 @@ console.log(Astro.props);
       rel="stylesheet"
     />
   </head>
-  <body class="p-6 text-[#D0D6D9] bg-cover h-screen w-screen font-barlow" style=`background-image: url(${bgMobileUrl})`>
+  <body class="p-6 text-[#D0D6D9] bg-cover h-screen w-screen font-barlow text-[calc(15px + 0.390625vw) bg-mobile md:bg-tablet lg:bg-desktop" >
     <Header />
     <slot />
   </body>

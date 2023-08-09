@@ -1,27 +1,58 @@
+---
+const listItems = [
+          ["HOME", "/", "md:hidden"],
+          ["DESTINATION", "destination/", "md:hidden"],
+          ["CREW", "crew/", "md:hidden"],
+          ["TECHNOLOGY", "technology/", "md:hidden"],
+        ];
+        const path = Astro.url.pathname;
+        const s = "border-solid border-b-2";
+---
 <header class="flex justify-between">
-    <div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><g fill="none" fill-rule="evenodd"><circle cx="24" cy="24" r="24" fill="#FFF"/><path fill="#0B0D17" d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"/></g></svg>
-    </div>
-    <button class="hamburger">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z"/></g></svg>
+  <div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+      ><g fill="none" fill-rule="evenodd"
+        ><circle cx="24" cy="24" r="24" fill="#FFF"></circle><path
+          fill="#0B0D17"
+          d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
+        ></path></g
+      ></svg
+    >
+  </div>
+  <div></div>
+  <button class="hamburger md:hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21"
+      ><g fill="#D0D6F9" fill-rule="evenodd"
+        ><path d="M0 0h24v3H0zM0 9h24v3H0zM0 18h24v3H0z"></path></g
+      ></svg
+    >
+  </button>
+  <nav
+    class="menu absolute h-screen w-2/3 top-0 right-0 backdrop-blur-3xl flex flex-col p-8 invisible transition duration-300 ease-in-out opacity-0 
+            md:visible md:opacity-100 md:p-0 md:bg-gray-900 md:h-24 md:w-7/12 md:justify-center"
+  >
+    <button class="close self-end mb-16 md:hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
+        ><g fill="#D0D6F9" fill-rule="evenodd"
+          ><path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z"></path><path
+            d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z"></path></g
+        ></svg
+      >
     </button>
-    <nav class="menu absolute h-screen w-2/3 top-0 right-0 backdrop-blur-3xl flex flex-col p-8 invisible transition duration-300 ease-in-out opacity-0" >
-        <button class="close self-end mb-16">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"><g fill="#D0D6F9" fill-rule="evenodd"><path d="M2.575.954l16.97 16.97-2.12 2.122L.455 3.076z"/><path d="M.454 17.925L17.424.955l2.122 2.12-16.97 16.97z"/></g></svg>
-        </button>
-        <ul class="text-white flex flex-col justify-center gap-9 font-barlow tracking-widest">
-            <li>
-                <a href="/"><b>00</b> HOME</a>
-            </li>
-            <li>
-                <a href="../pages/destination/destination.astro"><b>01</b> DESTINATION</a>
-            </li>
-            <li>
-                <a href="../pages/crew/crew.astro"><b>02</b> CREW</a>
-            </li>
-            <li>
-                <a href="../pages/technology/technology.astro"><b>03</b> TECHNOLOGY</a>
-            </li>
-        </ul>
-    </nav>
+    <ul
+      class="text-white flex flex-col justify-center gap-9 font-barlow tracking-widest 
+            md:flex-row md:h-full"
+    >
+      {
+        listItems.map(([title, url, style]) => (
+            
+          <li class={ "flex flex-col justify-center ".concat(path === url && "border-solid border-b-2")}>
+            <a href={url}>
+              <b class={style}>00</b> {title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
 </header>

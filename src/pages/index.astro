@@ -1,23 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-
 <BaseLayout
-  bgMobileUrl={"../assets/home/background-home-mobile.jpg"}
   title={"Home"}
 >
-  <main class="pt-10 text-center">
+  <main class="mt-[20%] text-center md:w-3/5 mx-auto flex gap-36 flex-wrap justify-center">
     <section>
-      <p>
-		<span class="block tracking-widest">SO, YOU WANT TO TRAVEL TO</span> <span class="font-bellefair text-white text-[80px] block">SPACE</span>
-		Let's face it; if you want to go to space,
-		you might as well genuinely go to outer space and not hover kind of on the
-		edge of it. Well sit back, and relax because we'll give you a truly out of
-		this world experience!
-	  </p>
+      <span class="block tracking-widest md:text-xl">SO, YOU WANT TO TRAVEL TO</span>
+      <span class="font-bellefair text-white text-[80px] block md:text-[150px]">SPACE</span>
+      <p class="leading-relaxed">
+        Let's face it; if you want to go to space, you might as well genuinely go
+        to outer space and not hover kind of on the edge of it. Well sit back, and
+        relax because we'll give you a truly out of this world experience!
+      </p>
     </section>
-    <section class="mt-20">
-      <span class="bg-white rounded-full w-[150px] h-[150px] block m-auto pt-16 text-xl text-[#0B0D17] font-bellefair">EXPLORE</span>
+    <section>
+      <span
+        class="bg-white rounded-full w-[150px] h-[150px] block m-auto pt-[45%] text-xl text-[#0B0D17] font-bellefair md:w-[242px] md:h-[242px] md:text-2xl"
+        >EXPLORE</span
+      >
     </section>
   </main>
 </BaseLayout>
