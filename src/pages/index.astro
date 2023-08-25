@@ -17,10 +17,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </p>
     </section>
     <section class="mt-[35%] lg:mt-[10%]">
-      <span
-        class="bg-white rounded-full w-[150px] h-[150px] m-auto flex justify-center items-center text-xl text-[#0B0D17] font-bellefair md:w-[242px] md:h-[242px] md:text-2xl "
-        >EXPLORE</span
-      >
+      <div class="lg:inline-block lg:relative lg:before:absolute lg:before:top-[50%] lg:before:left-[50%] lg:before:-translate-x-1/2 lg:before:-translate-y-1/2 lg:before:w-[242px] lg:before:h-[242px] lg:before:bg-[rgb(255,255,255,0.136)] lg:before:rounded-full lg:before:z-[-1] lg:before:opacity-0 lg:before:transition lg:before:ease-in-out lg:hover:before:-translate-x-1/2 lg:hover:before:-translate-y-1/2 lg:hover:before:opacity-100 lg:hover:before:scale-[1.25]">
+        <span
+          class="cursor-pointer bg-white rounded-full w-[150px] h-[150px] m-auto flex justify-center items-center text-xl text-[#0B0D17] font-bellefair md:w-[242px] md:h-[242px] md:text-2xl "
+          >EXPLORE
+        </span>
+      </div>
     </section>
   </main>
 </BaseLayout>
