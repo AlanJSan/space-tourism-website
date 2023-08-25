@@ -1,15 +1,18 @@
 ---
+const listItemStyle = "md:hidden lg:inline";
+const borderBottomStyle = "md:border-solid md:border-b-2";
+const borderBottomHoverStyle = "lg:hover:border-solid lg:hover:border-b-2 lg:hover:border-b-neutral-400	";
 const listItems = [
-          ["HOME", "/", "md:hidden"],
-          ["DESTINATION", "destination/", "md:hidden"],
-          ["CREW", "crew/", "md:hidden"],
-          ["TECHNOLOGY", "technology/", "md:hidden"],
+          ["00","HOME", "/", listItemStyle],
+          ["01","DESTINATION", "destination/", listItemStyle],
+          ["02","CREW", "crew/", listItemStyle],
+          ["03","TECHNOLOGY", "technology/", listItemStyle],
         ];
-        const path = Astro.url.pathname;
-        const s = "border-solid border-b-2";
+const path = Astro.url.pathname;
 ---
-<header class="flex justify-between">
-  <div>
+<header class="mt-6 flex items-center lg:col-span-full lg:mt-10 lg:h-fit">
+  <div class="invisible z-10 w-[474px] border-b-[1px] border-[rgb(255,255,255,0.25)] lg:visible "></div>
+  <div class="lg:relative lg:right-[50%]">
     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
       ><g fill="none" fill-rule="evenodd"
         ><circle cx="24" cy="24" r="24" fill="#FFF"></circle><path
@@ -19,7 +22,6 @@ const listItems = [
       ></svg
     >
   </div>
-  <div></div>
   <button class="hamburger md:hidden">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="21"
       ><g fill="#D0D6F9" fill-rule="evenodd"
@@ -28,8 +30,9 @@ const listItems = [
     >
   </button>
   <nav
-    class="menu absolute h-screen w-2/3 top-0 right-0 backdrop-blur-3xl flex flex-col p-8 invisible transition duration-300 ease-in-out opacity-0 
-            md:visible md:opacity-100 md:p-0 md:bg-gray-900 md:h-24 md:w-7/12 md:justify-center"
+    class="menu bg-[rgb(255,255,255,0.04)] absolute h-screen w-2/3 top-0 right-0 backdrop-blur-3xl flex flex-col p-8 invisible transition duration-300 ease-in-out opacity-0 
+            md:visible md:opacity-100 md:p-0 md:h-24 md:w-7/12 md:justify-center 
+            lg:top-4"
   >
     <button class="close self-end mb-16 md:hidden">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21"
@@ -44,11 +47,10 @@ const listItems = [
             md:flex-row md:h-full"
     >
       {
-        listItems.map(([title, url, style]) => (
-            
-          <li class={ "flex flex-col justify-center ".concat(path === url && "border-solid border-b-2")}>
+        listItems.map(([num,title, url, style]) => (
+          <li class={ "flex flex-col justify-center lg:hover:cursor ".concat(path === url ? borderBottomStyle : borderBottomHoverStyle)}>
             <a href={url}>
-              <b class={style}>00</b> {title}
+              <b class={style}>{num}</b> {title}
             </a>
           </li>
         ))

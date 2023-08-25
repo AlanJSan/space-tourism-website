@@ -4,8 +4,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <BaseLayout
   title={"Home"}
 >
-  <main class="mt-[20%] text-center md:w-3/5 mx-auto flex gap-36 flex-wrap justify-center">
-    <section>
+  <main class="mt-[20%] text-center mx-auto flex flex-col 
+  md:col-start-3 md:col-end-11 md:row-start-4 md:row-end-13 md:mt-0  md:h-fit md:w-fit
+  lg:flex-row lg:col-span-full lg:row-start-[13] lg:justify-between">
+    <section class="lg:w-[40%]">
       <span class="block tracking-widest md:text-xl">SO, YOU WANT TO TRAVEL TO</span>
       <span class="font-bellefair text-white text-[80px] block md:text-[150px]">SPACE</span>
       <p class="leading-relaxed">
@@ -14,9 +16,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         relax because we'll give you a truly out of this world experience!
       </p>
     </section>
-    <section>
+    <section class="mt-[35%] lg:mt-[10%]">
       <span
-        class="bg-white rounded-full w-[150px] h-[150px] block m-auto pt-[45%] text-xl text-[#0B0D17] font-bellefair md:w-[242px] md:h-[242px] md:text-2xl"
+        class="bg-white rounded-full w-[150px] h-[150px] m-auto flex justify-center items-center text-xl text-[#0B0D17] font-bellefair md:w-[242px] md:h-[242px] md:text-2xl "
         >EXPLORE</span
       >
     </section>

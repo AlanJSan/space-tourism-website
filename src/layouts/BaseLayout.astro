@@ -18,7 +18,10 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body class="p-6 text-[#D0D6D9] bg-cover h-screen w-screen font-barlow text-[calc(15px + 0.390625vw) bg-mobile md:bg-tablet lg:bg-desktop" >
+  <body class="mx-6 text-[#D0D6D9] bg-cover font-barlow text-[calc(15px + 0.390625vw) bg-mobile md:bg-tablet lg:bg-desktop
+              md:grid md:grid-cols-[repeat(12,minmax(48px,1fr))] md:gap-x-[10px] md:grid-rows-[repeat(17,60px)] md:gap-y-3
+              lg:grid-cols-[repeat(12,65px)] lg:gap-x-[30px] lg:grid-rows-[repeat(auto-fill,minmax(60px,1fr))]
+              lg:m-auto lg:w-fit">
     <Header />
     <slot />
   </body>
