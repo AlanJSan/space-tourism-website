@@ -3,12 +3,12 @@ import Header from "../components/Header.astro";
 const listItemStyle = "md:hidden lg:inline";
 const listItems = [
           ["00","HOME", "/", listItemStyle],
-          ["01","DESTINATION", "/destination/", listItemStyle],
-          ["02","CREW", "/crew/", listItemStyle],
-          ["03","TECHNOLOGY", "/technology/", listItemStyle],
+          ["01","DESTINATION", "/destination/", listItemStyle, "PICK YOUR DESTINATION"],
+          ["02","CREW", "/crew/", listItemStyle, "MEET YOUR CREW"],
+          ["03","TECHNOLOGY", "/technology/", listItemStyle, "SPACE LAUNCH 101"],
         ];
 const { title, bgMobile, bgTablet, bgDesktop } = Astro.props;
-const subtitle = listItems.slice(1).some( arr => arr[2] === Astro.url.pathname);
+const index = listItems.findIndex( arr => arr[2] === Astro.url.pathname);
 ---
 
 <html lang="en">
@@ -33,7 +33,11 @@ const subtitle = listItems.slice(1).some( arr => arr[2] === Astro.url.pathname);
     <Header 
     listItems = {listItems}
     />
-    {subtitle && <h1></h1>}
+    {index > 0 && 
+    <div class="flex justify-center gap-[18px] tracking-[clamp(2.7px,0.45vw,4.72px)] mt-7 text-[clamp(16px,2.7vw,28px)]">
+      <span class="font-bold opacity-[0.25]">{listItems[index][0]}</span><h1>{listItems[index][4]}</h1>
+    </div>
+    }
     <slot />
   </body>
   <script>
