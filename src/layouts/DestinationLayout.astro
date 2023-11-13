@@ -1,10 +1,14 @@
 ---
+import Banner from "../components/Banner.astro";
 import json from "../pages/data.json";
 const destinations = json.destinations;
 let index = 0;
 console.log(destinations)
 ---
-<img id="prueba" src={destinations[index].images.webp} alt="" srcset="" class="hover:cursor-pointer">
+<Banner
+    route={destinations[index].images.webp} 
+    styles={"w-[clamp(170px,40vw,445px)] mx-auto md:w-[300px] md:col-start-4 md:col-end-10 md:row-start-4 md:row-end-8"}
+/>
 <main>
 <nav></nav>
 <section></section>
