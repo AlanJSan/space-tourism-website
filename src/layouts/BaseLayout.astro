@@ -1,15 +1,8 @@
 ---
 import Header from "../components/Header.astro";
-const listItemStyle = "mr-3 md:hidden lg:inline";
-const listItems = [
-          ["00","HOME", "/", listItemStyle],
-          ["01","DESTINATION", "/destination/", listItemStyle, "PICK YOUR DESTINATION"],
-          ["02","CREW", "/crew/", listItemStyle, "MEET YOUR CREW"],
-          ["03","TECHNOLOGY", "/technology/", listItemStyle, "SPACE LAUNCH 101"],
-        ];
+
 const { title, bgMobile, bgTablet, bgDesktop } = Astro.props;
-const index = listItems.findIndex( arr => arr[2] === Astro.url.pathname);
-console.log(Astro.url.pathname.split("/"))
+//const index = listItems.findIndex( arr => arr[2] === Astro.url.pathname);
 import { ViewTransitions } from 'astro:transitions';
 ---
 
@@ -33,14 +26,7 @@ import { ViewTransitions } from 'astro:transitions';
               md:grid md:grid-cols-[repeat(12,minmax(48px,1fr))] md:gap-x-[10px] md:grid-rows-[repeat(17,60px)] md:gap-y-3
               lg:grid-cols-[repeat(12,65px)] lg:gap-x-[30px] lg:grid-rows-[repeat(auto-fill,minmax(60px,1fr))]
               lg:m-auto lg:w-fit lg:h-screen`>
-    <Header 
-      listItems = {listItems}
-    />
-    {index > 0 && 
-    <div class="flex justify-center gap-[18px] tracking-[clamp(2.7px,0.45vw,4.72px)] my-[10%] text-[clamp(16px,2.7vw,28px)] md:justify-start md:col-start-1 md:col-end-6 md:row-start-3 md:m-auto">
-      <span class="font-bold opacity-[0.25]">{listItems[index][0]}</span><h1>{listItems[index][4]}</h1>
-    </div>
-    }
+    <Header />
     <slot />
   </body>
   <script>

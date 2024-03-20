@@ -1,16 +1,31 @@
 ---
-import Banner from "../components/Banner.astro";
-import json from "../pages/data.json";
-const destinations = json.destinations;
-let index = 0;
-console.log(destinations)
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro"
+import Navbar from "../components/Navbar.astro"
+
+const { destination } = Astro.props;
+const routes = [
+    ["MOON","/destination/"],
+    ["MARS","/destination/mars"],
+    ["EUROPA","/destination/europa"],
+    ["TITAN","/destination/titan"]
+];
 ---
-<Banner
-    route={destinations[index].images.webp} 
-    styles={"w-[clamp(170px,40vw,445px)] mx-auto md:w-[300px] md:col-start-4 md:col-end-10 md:row-start-4 md:row-end-8"}
-/>
-<main>
-<nav></nav>
-<section></section>
-<section></section>
-</main>
+
+<BaseLayout
+  title={"Destination"}
+  bgMobile={"bg-destination-mobile"}
+  bgTablet={"md:bg-destination-tablet"}
+  bgDesktop={"lg:bg-destination-desktop"}
+>
+  <Banner
+    route={destination.images.webp}
+    styles={"w-[clamp(170px,40vw,445px)] mx-auto my-4 md:w-[300px] md:col-start-4 md:col-end-10 md:row-start-4 md:row-end-8"}
+  />
+  <main>
+    <Navbar routes={routes} listStyles={"flex flex-col justify-center"} listItemStyle={"hover:cursor"} />
+    <!-- CREAR SECCION COMPONENTE, LLEVARÁ TÍTULO Y CUERPO -->
+    <section></section>
+    <section></section>
+  </main>
+</BaseLayout>

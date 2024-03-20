@@ -1,0 +1,20 @@
+---
+const { routes, listStyles, listItemStyle } = Astro.props;
+const pathName = Astro.url.pathname
+---
+
+<nav>
+  <ul class={"flex justify-around w-[237.5px] mx-auto md:w-[285.5px] "}>
+    {
+      routes.map(([name, route]) => (
+        <li
+          class={listItemStyle + ` ${route === pathName && "text-white border-b-2 border-b-white"}`}
+        >
+          <a href={route}>
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
