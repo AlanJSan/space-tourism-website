@@ -3,8 +3,8 @@ const { routes, listStyles, listItemStyle } = Astro.props;
 const pathName = Astro.url.pathname
 ---
 
-<nav>
-  <ul class={"flex justify-around w-[237.5px] mx-auto md:w-[285.5px] "}>
+<nav class="">
+  <ul class={"flex justify-around w-[237.5px] mx-auto md:w-[285.5px] lg:ml-0 lg:justify-between"}>
     {
       routes.map(([name, route]) => (
         <li
