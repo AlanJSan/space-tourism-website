@@ -1,10 +1,8 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import CrewLayout from "../../layouts/CrewLayout.astro";
+import json from "../../pages/data.json";
+const crew = json.crew;
+console.log(crew)
 ---
 
-<BaseLayout
-  title={"Crew"}
-  bgMobile={"bg-crew-mobile"}
-  bgTablet={"md:bg-crew-tablet"}
-  bgDesktop={"lg:bg-crew-desktop"}
-/>
+<CrewLayout crew={crew[0]} />

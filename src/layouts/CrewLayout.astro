@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Banner from "../components/Banner.astro";
+import Navbar from "../components/Navbar.astro";
+
+const { crew } = Astro.props;
+const routes = [
+  ["MOON", "/destination/"],
+  ["MARS", "/destination/mars"],
+  ["EUROPA", "/destination/europa"],
+  ["TITAN", "/destination/titan"],
+];
+---
+
+<BaseLayout
+  title={"Crew"}
+  bgMobile={"bg-crew-mobile"}
+  bgTablet={"md:bg-crew-tablet"}
+  bgDesktop={"lg:bg-crew-desktop"}
+>
+  <Banner
+    route={crew.images.webp}
+    styles={"w-[170px] mx-auto lg:mx-0 my-4 md:w-[300px] lg:md:w-[445px] md:col-start-4 md:col-end-10 md:row-start-[4] md:row-end-8 lg:col-start-2 lg:row-start-5"}
+  />
+  <main class="text-center flex flex-col gap-5 h-fit md:col-start-2 md:col-end-12 md:row-start-[9]  lg:text-start lg:col-start-8 lg:col-end-[-1] lg:row-start-5">
+    <Navbar
+      routes={routes}
+      listStyles={"flex flex-col justify-center"}
+      listItemStyle={"hover:cursor"}
+    />
+    <section>
+      <h1 class=" font-bellefair text-[56px] text-white md:text-[80px] lg:text-[100px]">{crew.name.toUpperCase()}</h1>
+      <p>
+        {crew.description}
+      </p>
+    </section>
+    <hr class="border-[#383B4B]" />
+  </main>
+</BaseLayout>
