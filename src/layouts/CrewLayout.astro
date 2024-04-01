@@ -5,35 +5,38 @@ import Navbar from "../components/Navbar.astro";
 
 const { crew } = Astro.props;
 const routes = [
-  ["MOON", "/destination/"],
-  ["MARS", "/destination/mars"],
-  ["EUROPA", "/destination/europa"],
-  ["TITAN", "/destination/titan"],
+  ["", "/crew/"],
+  ["", "/crew/specialist"],
+  ["", "/crew/pilot"],
+  ["", "/crew/engineer"],
 ];
 ---
-
 <BaseLayout
   title={"Crew"}
   bgMobile={"bg-crew-mobile"}
   bgTablet={"md:bg-crew-tablet"}
   bgDesktop={"lg:bg-crew-desktop"}
 >
-  <Banner
+  <div class="border-b-[2px] border-b-[#383B4B] w-[327px] h-[223px] md:w-[368.85px] md:h-[532px] md:col-start-4  md:row-start-[8] md:border-b-0">
+    <Banner
     route={crew.images.webp}
-    styles={"w-[170px] mx-auto lg:mx-0 my-4 md:w-[300px] lg:md:w-[445px] md:col-start-4 md:col-end-10 md:row-start-[4] md:row-end-8 lg:col-start-2 lg:row-start-5"}
-  />
-  <main class="text-center flex flex-col gap-5 h-fit md:col-start-2 md:col-end-12 md:row-start-[9]  lg:text-start lg:col-start-8 lg:col-end-[-1] lg:row-start-5">
+    styles={"h-full w-auto mx-auto lg:mx-0 mt-4 md:m-0"}
+    />
+  </div>
+  <main class="mt-8 text-center flex flex-col gap-5 h-fit md:flex-col-reverse md:col-start-3 md:col-end-11 md:row-start-[4]  lg:text-start lg:col-start-8 lg:col-end-[-1] lg:row-start-5">
     <Navbar
       routes={routes}
-      listStyles={"flex flex-col justify-center"}
-      listItemStyle={"hover:cursor"}
+      listStyles={"w-[88px] md:w-[88px]"}
+      listItemStyle={"rounded-full h-[10px] w-[10px] bg-white opacity-[17.44%] hover:cursor"}
+      extraItemStyle={"opacity-100"}
+      navStyles={""}
     />
     <section>
-      <h1 class=" font-bellefair text-[56px] text-white md:text-[80px] lg:text-[100px]">{crew.name.toUpperCase()}</h1>
-      <p>
-        {crew.description}
+      <span class="text-white opacity-[49.51%] font-bellefair text-base md:text-2xl">{crew.role.toUpperCase()}</span>
+      <h1 class="mt-2 font-bellefair text-2xl text-white md:text-[40px] lg:text-[100px]">{crew.name.toUpperCase()}</h1>
+      <p class="leading-6 mt-4 md:leading-7">
+        {crew.bio}
       </p>
     </section>
-    <hr class="border-[#383B4B]" />
   </main>
 </BaseLayout>
