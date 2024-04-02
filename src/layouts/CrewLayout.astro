@@ -17,12 +17,9 @@ const routes = [
   bgTablet={"md:bg-crew-tablet"}
   bgDesktop={"lg:bg-crew-desktop"}
 >
-  <div class="border-b-[2px] border-b-[#383B4B] w-[327px] h-[223px] md:w-[368.85px] md:h-[532px] md:col-start-4  md:row-start-[8] md:border-b-0">
-    <Banner
-    route={crew.images.webp}
-    styles={"h-full w-auto mx-auto lg:mx-0 mt-4 md:m-0"}
-    />
-  </div>
+    <figure class="border-b-[2px] border-b-[#383B4B] col-start-[2] col-end-[12] row-start-[8] h-fit md:border-b-0">
+      <img src={crew.images.webp} alt=`Photo of ${crew.name} - ${crew.role}` class="h-[223px] md:h-[532px] mx-auto">
+    </figure>
   <main class="mt-8 text-center flex flex-col gap-5 h-fit md:flex-col-reverse md:col-start-3 md:col-end-11 md:row-start-[4]  lg:text-start lg:col-start-8 lg:col-end-[-1] lg:row-start-5">
     <Navbar
       routes={routes}
