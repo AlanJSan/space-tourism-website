@@ -17,10 +17,10 @@ const routes = [
   bgTablet={"md:bg-crew-tablet"}
   bgDesktop={"lg:bg-crew-desktop"}
 >
-    <figure class="border-b-[2px] border-b-[#383B4B] col-start-[2] col-end-[12] row-start-[8] h-fit md:border-b-0 lg:col-start-[7] lg:col-span-full lg:row-start-4 lg:row-span-full">
-      <img src={crew.images.webp} alt=`Photo of ${crew.name} - ${crew.role}` class="h-[223px] md:h-[532px] mx-auto lg:h-auto">
+    <figure class="border-b-[2px] border-b-[#383B4B] col-start-[2] col-end-[12] row-start-[8] h-fit md:border-b-0 lg:col-start-[8] lg:col-span-full lg:row-start-4 lg:row-span-full lg:h-auto lg:w-max">
+      <img src={crew.images.webp} alt=`Photo of ${crew.name} - ${crew.role}` class="h-[223px] md:h-[532px] mx-auto lg:h-full">
     </figure>
-  <main class="mt-[5%] text-center flex flex-col gap-5 h-fit md:flex-col-reverse md:col-start-3 md:col-end-11 md:row-start-[4] lg:text-start lg:col-start-1 lg:col-end-8 lg:row-start-6">
+  <main class="mt-[5%] text-center flex flex-col gap-5 h-fit md:flex-col-reverse md:col-start-3 md:col-end-11 md:row-start-[4] lg:text-start lg:col-start-1 lg:col-end-8 lg:row-start-6 lg:h-auto lg:justify-around lg:row-span-full lg:mt-0">
     <Navbar
       routes={routes}
       listStyles={"w-[88px] md:w-[88px] lg:w-[132px]"}
@@ -28,10 +28,10 @@ const routes = [
       extraItemStyle={"opacity-[100%] hover:opacity-[100%]"}
       navStyles={""}
     />
-    <section class="lg:space-y-10 lg:mb-[10%]">
+    <section class="lg:space-y-10 lg:h-[70%]">
       <span class="text-white opacity-[49.51%] font-bellefair text-base md:text-2xl lg:text-[32px]">{crew.role.toUpperCase()}</span>
       <h1 class="mt-[1%] font-bellefair text-2xl text-white md:text-[40px] lg:text-[56px]">{crew.name.toUpperCase()}</h1>
-      <p class="leading-6 mt-[2%] md:leading-7 lg:leading-8 lg:w-[65%]">
+      <p class="leading-6 mt-[2%] md:leading-7 lg:leading-8 lg:w-[70%] font-bar">
         {crew.bio}
       </p>
     </section>

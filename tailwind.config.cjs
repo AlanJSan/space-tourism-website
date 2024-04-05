@@ -4,7 +4,8 @@ module.exports = {
 	theme: {
 		fontFamily: {
 			bellefair: ['Bellefair', 'serif'],
-			barlow: ['Barlow Condensed', 'sans-serif']
+			barlow: ['Barlow Condensed', 'sans-serif'],
+			bar: ['Barlow', 'sans-serif']
 		},
 		extend: {
 			backgroundImage: {
