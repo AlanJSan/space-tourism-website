@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navbar from "../components/Navbar.astro";
+
+const { tech } = Astro.props;
+const routes = [
+  ["1", "/technology/"],
+  ["2", "/technology/spaceport"],
+  ["3", "/technology/capsule"],
+];
+console.log()
+---
+<BaseLayout
+  title={"Technology"}
+  bgMobile={"bg-technology-mobile"}
+  bgTablet={"md:bg-technology-tablet"}
+  bgDesktop={"lg:bg-technology-desktop"}
+/>
+    <figure class="absolute left-0 mb-[10%] md:mb-0 col-start-[2] col-end-[12] row-start-[8] md:border-b-0 lg:col-start-[8] lg:col-span-full lg:row-start-4 lg:row-span-full lg:w-max">
+      <img src={tech.images.landscape} alt=`Photo of ${tech.name}` class=" md:h-[532px] mx-auto lg:h-full">
+    </figure>
+  <main class=" translate-y-2/3 text-center flex flex-col gap-5 h-fit md:flex-col-reverse md:col-start-2 md:col-end-12 md:row-start-[4] lg:text-start lg:col-start-1 lg:col-end-8 lg:row-start-6 lg:h-auto lg:justify-around lg:row-span-full">
+    <Navbar
+      routes={routes}
+      listStyles={"text-black w-[152px] md:w-[210px] lg:w-[132px]"}
+      listItemStyle={"font-bellefair rounded-full h-[40px] w-[40px] bg-transparent text-white border-white/25 border-solid border-[1px] hover:cursor lg:h-[15px] lg:w-[15px] hover:opacity-[50.01%]"}
+      extraItemStyle={"text-black bg-[#fff] hover:opacity-[101%]"}
+      navStyles={""}
+    />
+    <section class="md:space-y-5 lg:space-y-10 lg:h-[70%]">
+      <span class="text-white opacity-[49.51%] font-bellefair text-base md:text-2xl lg:text-[32px]">THE TERMINOLOGY...</span>
+      <h1 class="mt-[1%] font-bellefair text-2xl text-white md:text-[40px] lg:text-[56px]">{tech.name.toUpperCase()}</h1>
+      <p class="leading-6 mt-[2%] md:leading-7 lg:leading-8 lg:w-[70%] font-bar">
+        {tech.description}
+      </p>
+    </section>
+  </main>
+</BaseLayout>

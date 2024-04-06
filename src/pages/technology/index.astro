@@ -1,10 +1,8 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import TechnologyLayout from "../../layouts/TechnologyLayout.astro";
+import json from "../../pages/data.json";
+const tech = json.technology;
+console.log(tech)
 ---
 
-<BaseLayout
-  title={"Technology"}
-  bgMobile={"bg-technology-mobile"}
-  bgTablet={"md:bg-technology-tablet"}
-  bgDesktop={"lg:bg-technology-desktop"}
-/>
+<TechnologyLayout tech={tech[0]} />
