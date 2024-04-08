@@ -8,7 +8,6 @@ const routes = [
   ["2", "/technology/spaceport"],
   ["3", "/technology/capsule"],
 ];
-console.log();
 ---
 
 <BaseLayout
@@ -25,7 +24,14 @@ console.log();
     data-img-landscape={tech.images.landscape}
     src={tech.images.landscape}
     alt=`Photo of ${tech.name}`
-    class="mx-auto lg:h-auto"
+    class="mx-auto lg:h-auto lg:hidden"
+  />
+  <img
+    data-img-portrait={tech.images.portrait}
+    data-img-landscape={tech.images.landscape}
+    src={tech.images.portrait}
+    alt=`Photo of ${tech.name}`
+    class="mx-auto lg:h-auto hidden lg:block"
   />
 </figure>
 <main
@@ -52,16 +58,3 @@ console.log();
     </p>
   </section>
 </main>
-
-<script>
-  function setImage(){
-    const img = document.querySelector("img")
-    const imgPortrait = img.getAttribute("data-img-portrait")
-    const imgLandscape = img.getAttribute("data-img-landscape")
-    img.src =
-      window.innerWidth > 1024 ? imgPortrait : imgLandscape;
-  }
-
-  document.addEventListener("astro:page-load", () => setImage());
-  window.addEventListener("resize", () => setImage());
-</script>
