@@ -50,7 +50,7 @@ const index = listItems.findIndex( arr => arr[1] === path.toUpperCase());
       {
         listItems.map(([num,title, url, style]) => (
           <li class={ "flex items-center hover:cursor ".concat(((homePath === url) || (url.split('/')[1] === path)) ? borderBottomStyle : borderBottomHoverStyle)}>
-            <a href={url}>
+            <a href={"/space-tourism-website"+url}>
               <b class={style}>{num}</b> {title}
             </a>
           </li>

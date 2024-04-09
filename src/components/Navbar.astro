@@ -10,7 +10,7 @@ const pathName = Astro.url.pathname
         <li
           class={listItemStyle + ` ${route === pathName && "text-white border-b-2 border-b-white " + extraItemStyle}`}
         >
-          <a href={route} class="block h-full content-center text-center">
+          <a href={"/space-tourism-website"+route} class="block h-full content-center text-center">
             {name}
           </a>
         </li>
