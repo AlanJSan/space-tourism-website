@@ -20,16 +20,16 @@ const routes = [
 >
   <Banner
     route={destination.images.webp}
-    styles={"w-[170px] mx-auto lg:mx-0 my-4 md:w-[300px] lg:md:w-[445px] md:col-start-4 md:col-end-10 md:row-start-[4] md:row-end-8 lg:col-start-2 lg:row-start-5"}
+    styles={"w-[170px] mx-auto lg:mx-0 my-4 md:w-[300px] lg:md:w-[50%] md:col-start-4 md:col-end-10 md:row-start-[4] md:row-end-8 lg:col-start-2 lg:row-start-4"}
   />
-  <main class="text-center flex flex-col gap-5 h-fit md:col-start-2 md:col-end-12 md:row-start-[9]  lg:text-start lg:col-start-8 lg:col-end-[-1] lg:row-start-5">
+  <main class="text-center flex flex-col gap-5 h-fit md:col-start-2 md:col-end-12 md:row-start-[9]  lg:text-start lg:col-start-8 lg:col-end-[-1] lg:row-start-4 lg:row-end-[-1]">
     <Navbar
       routes={routes}
       listStyles={""}
       listItemStyle={"hover:cursor hover:border-b-2 hover:border-b-[#979797]"}
     />
     <section>
-      <h1 class=" font-bellefair text-[56px] text-white md:text-[80px] lg:text-[100px]">{destination.name.toUpperCase()}</h1>
+      <h1 class=" font-bellefair text-[56px] text-white md:text-[80px] lg:text-[5vw]">{destination.name.toUpperCase()}</h1>
       <p class="font-bar">
         {destination.description}
       </p>
