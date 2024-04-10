@@ -21,7 +21,10 @@ module.exports = {
 				'technology-mobile': 'url(/space-tourism-website/assets/technology/background-technology-mobile.jpg)',
 				'technology-tablet': 'url(/space-tourism-website/assets/technology/background-technology-tablet.jpg)',
 				'technology-desktop': 'url(/space-tourism-website/assets/technology/background-technology-desktop.jpg)',
-			  }
+			  },
+			  screens: {
+				'desktop': '1440px'
+			},
 		},
 	},
 	plugins: [],

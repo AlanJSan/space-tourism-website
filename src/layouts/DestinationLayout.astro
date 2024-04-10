@@ -20,16 +20,16 @@ const routes = [
 >
   <Banner
     route={destination.images.webp}
-    styles={"w-[170px] mx-auto lg:mx-0 my-4 md:w-[300px] lg:md:w-[50%] md:col-start-4 md:col-end-10 md:row-start-[4] md:row-end-8 lg:col-start-2 lg:row-start-4"}
+    styles={"w-[170px] mx-auto lg:mx-0 my-4 md:w-[300px] lg:md:w-[334px] desktop:w-[445px] md:col-start-4 md:col-end-10 md:row-start-[4] md:row-end-8 lg:col-start-2 lg:row-start-4 desktop:row-start-5"}
   />
-  <main class="text-center flex flex-col gap-5 h-fit md:col-start-2 md:col-end-12 md:row-start-[9]  lg:text-start lg:col-start-8 lg:col-end-[-1] lg:row-start-4 lg:row-end-[-1]">
+  <main class="text-center flex flex-col gap-5 h-fit md:col-start-2 md:col-end-12 md:row-start-[9]  lg:text-start lg:col-start-8 lg:col-end-[-1] lg:row-start-4 lg:row-end-[-1] desktop:row-start-5">
     <Navbar
       routes={routes}
       listStyles={""}
-      listItemStyle={"hover:cursor hover:border-b-2 hover:border-b-[#979797]"}
+      listItemStyle={"hover:cursor hover:border-b-2 hover:border-b-[#979797] text-[14px] md:text-[16px] tracking-[2.36px] md:tracking-[2.7px]"}
     />
     <section>
-      <h1 class="uppercase font-bellefair text-[56px] text-white md:text-[80px] lg:text-[5vw]">{destination.name}</h1>
+      <h1 class="uppercase font-bellefair text-[56px] text-white md:text-[80px] lg:text-[70px] desktop:text-[100px]">{destination.name}</h1>
       <p class="font-bar">
         {destination.description}
       </p>
@@ -37,11 +37,11 @@ const routes = [
     <hr class="border-[#383B4B]" />
     <section class="flex flex-col gap-8 md:flex-row md:justify-evenly lg:justify-start lg:gap-24">
       <div class="flex flex-col gap-3">
-        <span class="tracking-[2.36px]">AVG. DISTANCE</span>
+        <span class="text-[14px] tracking-[2.36px]">AVG. DISTANCE</span>
         <span class="uppercase text-white text-[28px] font-bellefair">{destination.distance}</span>
       </div>
       <div class="flex flex-col gap-3">
-        <span class="tracking-[2.36px]">EST. TRAVEL TIME</span>
+        <span class="text-[14px] tracking-[2.36px]">EST. TRAVEL TIME</span>
         <span class="uppercase text-white text-[28px] font-bellefair">{destination.travel}</span>
       </div>
     </section>
