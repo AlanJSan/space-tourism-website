@@ -10,7 +10,7 @@ const borderBottomStyle = "md:border-solid md:border-b-2";
 const borderBottomHoverStyle = "lg:hover:border-solid lg:hover:border-b-2 lg:hover:border-b-neutral-400	";
 const path = Astro.url.pathname.split('/')[2];
 const homePath = Astro.url.pathname;
-const index = listItems.findIndex( arr => arr[1] === path.toUpperCase());
+const index = path === '' ? 0 : listItems.findIndex( arr => arr[1] === path?.toUpperCase());
 ---
 <header class="mt-6 flex justify-between items-center lg:col-span-full lg:mt-10 lg:h-fit">
   <div class="hidden z-20 lg:w-[43%] xl:w-[47%] border-b-[1px] border-[rgb(255,255,255,0.25)] lg:block "></div>
