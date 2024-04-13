@@ -17,39 +17,39 @@ const routes = [
   bgDesktop={"lg:bg-technology-desktop"}
 />
 <figure
-  class="absolute lg:static left-0 md:top-[20%] mb-[10%] md:mb-0 col-start-[2] col-end-[12] row-start-[8] md:border-b-0 lg:col-start-[10] lg:col-span-full lg:row-start-4 lg:row-span-full lg:w-max"
+  class="absolute  left-0 md:top-[20%] mb-[10%] md:mb-0 col-start-[2] col-end-[12] row-start-[8] md:border-b-0 lg:col-start-[8] lg:col-span-full lg:row-start-4 lg:row-span-full lg:w-[100vw] lg:h-[-webkit-fill-available] lg:flex lg:absolute lg:justify-end lg:content-center lg:flex-wrap"
 >
   <img
     data-img-portrait={tech.images.portrait}
     data-img-landscape={tech.images.landscape}
     src={tech.images.landscape}
     alt=`Photo of ${tech.name}`
-    class="mx-auto lg:h-auto lg:hidden"
+    class="mx-auto lg:mx-0 lg:h-auto lg:hidden"
   />
   <img
     data-img-portrait={tech.images.portrait}
     data-img-landscape={tech.images.landscape}
     src={tech.images.portrait}
     alt=`Photo of ${tech.name}`
-    class="mx-auto lg:h-auto hidden lg:block"
+    class="mx-auto lg:mx-0  hidden lg:block lg:h-fit lg:w-[34vw]"
   />
 </figure>
 <main
-  class="translate-y-2/3 lg:translate-y-0 text-center flex flex-col gap-5 lg:gap-[15%] h-fit md:flex-col lg:flex-row md:col-start-2 md:col-end-12 md:row-start-[6] lg:text-start lg:col-start-1 lg:col-end-9 lg:row-start-6 lg:h-auto lg:justify-around lg:row-span-full"
+  class="translate-y-2/3 lg:translate-y-0 text-center flex flex-col gap-5 lg:gap-[15%] h-fit md:flex-col lg:flex-row md:col-start-2 md:col-end-12 md:row-start-[6] lg:text-start lg:col-start-1 lg:col-end-9 lg:row-start-5 xl:row-start-4 desktop:row-start-5 lg:h-auto lg:justify-around lg:row-span-full"
 >
   <Navbar
     routes={routes}
-    listStyles={"text-black text-[32px] w-[152px] md:w-[210px] lg:w-fit lg:h-[304px] lg:flex-col"}
-    listItemStyle={"font-bellefair rounded-full h-[40px] w-[40px] md:h-[60px] md:w-[60px] lg:h-[80px] lg:w-[80px] bg-transparent text-white border-white/25 border-solid border-[1px] hover:cursor hover:opacity-[50.01%]"}
-    extraItemStyle={"text-black bg-[#fff] hover:opacity-[101%]"}
+    listStyles={"lg:justify-evenly text-black text-[32px] w-[152px] md:w-[210px] lg:w-fit lg:h-[304px] lg:flex-col"}
+    listItemStyle={"font-bellefair rounded-full h-[40px] w-[40px] md:h-[60px] md:w-[60px] lg:h-[70px] lg:w-[70px] desktop:h-[80px] desktop:w-[80px] bg-transparent text-white border-white/25 border-solid border-[1px] hover:cursor hover:opacity-[50.01%]"}
+    extraItemStyle={"text-black bg-[#fff] hover:opacity-[101%] border-white/100"}
     navStyles={""}
   />
-  <section class="md:space-y-5 lg:space-y-10 lg:h-[70%]">
+  <section class=" md:space-y-5 lg:space-y-10 lg:h-[70%]">
     <span class="text-white tracking-[2.7px] opacity-[49.51%] text-base"
       >THE TERMINOLOGY...</span
     >
     <h1
-      class="uppercase mt-[1%] font-bellefair text-2xl text-white md:text-[40px] lg:text-[56px]"
+      class="uppercase mt-[1%] font-bellefair text-2xl text-white md:text-[40px] desktop:text-[56px]"
     >
       {tech.name}
     </h1>
