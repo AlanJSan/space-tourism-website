@@ -10,7 +10,6 @@ const borderBottomStyle = "md:border-solid md:border-b-2";
 const borderBottomHoverStyle = "lg:hover:border-solid lg:hover:border-b-2 lg:hover:border-b-neutral-400	";
 const path = Astro.url.pathname.split('/')[2];
 const homePath = Astro.url.pathname;
-console.log(homePath)
 const index = path === '' ? 0 : listItems.findIndex( arr => arr[1] === path?.toUpperCase());
 ---
 <header class="mt-6 flex justify-between items-center lg:col-span-full lg:mt-10 lg:h-fit">
@@ -55,14 +54,11 @@ const index = path === '' ? 0 : listItems.findIndex( arr => arr[1] === path?.toU
               <b class={style}>{num}</b> {title}
             </a>
           </li>
-          <p>{"homePath === url: "+new String(homePath === url)}</p>
-          <p>{`${url.split('/')} === ${homePath.split('/')}: ` + new String(url.split('/')[1] === path)}</p>
         ))
       }
     </ul>
   </nav>
 </header>
-<p>{homePath}</p>
 {index > 0 && 
   <div class="flex justify-center gap-[18px] tracking-[clamp(2.7px,0.45vw,4.72px)] my-[10%] text-[clamp(16px,2.7vw,28px)] md:justify-start md:col-start-1 md:col-end-7 md:row-start-2 md:pt-5 lg:row-start-3 lg:pt-0 lg:m-0">
     <span class="font-bold opacity-[0.25]">{listItems[index][0]}</span><h1>{listItems[index][4]}</h1>
