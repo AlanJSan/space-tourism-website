@@ -19,13 +19,15 @@ console.log("ARRAY ROUTES:",routes)
             {name}
           </a>
         </li>
+        <p>{" BASE_URL+route: "+BASE_URL+route}</p>
       ))
+      
     }
   </ul>
 </nav>
 <p>
   {
-    "PathName: "+pathName+" Astro.url: "+Astro.url+" BASE_URL:"+BASE_URL+
+    "Astro.url: "+Astro.url+"PathName: "+" BASE_URL:"+BASE_URL+
     " ARRAY ROUTES:"+routes
   }
 </p>
