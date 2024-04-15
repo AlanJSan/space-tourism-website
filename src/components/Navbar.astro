@@ -9,7 +9,7 @@ const BASE_URL = import.meta.env.BASE_URL
     {
       routes.map(([name, route]) => (
         <li
-          class={listItemStyle + ` ${BASE_URL+route === pathName && "text-[#000] border-b-2 border-white " + extraItemStyle}`}
+          class={listItemStyle + ` ${BASE_URL+route === pathName && "text-[#fff] border-b-2 border-white " + extraItemStyle}`}
         >
           <a href={BASE_URL+route} class="block h-full content-center text-center">
             {name}
